@@ -6,7 +6,7 @@
 #    By: ktanaka <ktanaka@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/01/20 14:24:33 by ktanaka           #+#    #+#              #
-#    Updated: 2018/01/26 16:04:39 by ktanaka          ###   ########.fr        #
+#    Updated: 2018/02/18 20:02:09 by ktanaka          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -68,7 +68,8 @@ FUNCTIONS = ft_memset.c \
 			ft_lstdel.c \
 			ft_lstadd.c \
 			ft_lstiter.c \
-			ft_lstmap.c
+			ft_lstmap.c \
+			ft_isspace.c
 INCLUDE = libft.h
 CFLAG = -Wall -Wextra -Werror
 NORM = norminette -R CheckForbiddenSourceHeader
