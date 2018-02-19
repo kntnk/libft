@@ -6,7 +6,7 @@
 #    By: ktanaka <ktanaka@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/01/20 14:24:33 by ktanaka           #+#    #+#              #
-#    Updated: 2018/02/18 20:02:09 by ktanaka          ###   ########.fr        #
+#    Updated: 2018/02/19 12:16:13 by ktanaka          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -69,27 +69,28 @@ FUNCTIONS = ft_memset.c \
 			ft_lstadd.c \
 			ft_lstiter.c \
 			ft_lstmap.c \
-			ft_isspace.c
+			ft_isspace.c \
+			ft_isnegative.c \
+			ft_strcpy_c.c \
+			ft_strlen_c.c \
+			ft_nbstr_c.c
 INCLUDE = libft.h
 CFLAG = -Wall -Wextra -Werror
-NORM = norminette -R CheckForbiddenSourceHeader
+OBJ = $(FUNCTIONS:.c=.o)
 
 .PHONY: all clean fclean re
 
 all: $(NAME)
 
 $(NAME):
-	gcc $(CFLAG) -c $(FUNCTIONS) -I $(INCLUDE)
-	ar rc $(NAME) ft_*.o
-	ranlib $(NAME)
-
-norm:
-	$(NORM) $(FUNCTIONS) $(INCLUDE)
+		gcc $(CFLAG) -c $(FUNCTIONS) -I $(INCLUDE)
+		ar rc $(NAME) $(OBJ)
+		ranlib $(NAME)
 
 clean:
-	rm -rf *.o
+		rm -rf $(OBJ)
 
 fclean: clean
-	rm -rf $(NAME)
+		rm -rf $(NAME)
 
 re: fclean all

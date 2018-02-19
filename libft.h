@@ -6,7 +6,7 @@
 /*   By: ktanaka <ktanaka@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/20 14:32:43 by ktanaka           #+#    #+#             */
-/*   Updated: 2018/02/18 20:04:38 by ktanaka          ###   ########.fr       */
+/*   Updated: 2018/02/18 20:21:33 by ktanaka          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,5 +86,9 @@ void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 
 int					ft_isspace(int c);
+void				ft_isnegative(int *n, int *negative);
+int					ft_strcpy_c(char *dest, char const *src, char c);
+int					ft_strlen_c(char const *s, char c);
+int					ft_nbstr_c(char const *s, char c);
 
 #endif
