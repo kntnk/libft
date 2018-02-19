@@ -6,20 +6,11 @@
 /*   By: ktanaka <ktanaka@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/26 13:09:44 by ktanaka           #+#    #+#             */
-/*   Updated: 2018/01/26 13:26:34 by ktanaka          ###   ########.fr       */
+/*   Updated: 2018/02/18 20:13:37 by ktanaka          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-void	check_negative(int *n, int *negative)
-{
-	if (*n < 0)
-	{
-		*n *= -1;
-		*negative = 1;
-	}
-}
 
 char	*ft_itoa(int n)
 {
@@ -33,7 +24,7 @@ char	*ft_itoa(int n)
 	temp = n;
 	length = 2;
 	negative = 0;
-	check_negative(&n, &negative);
+	ft_isnegative(&n, &negative);
 	while (temp /= 10)
 		length++;
 	length += negative;
