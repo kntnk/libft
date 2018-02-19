@@ -6,7 +6,7 @@
 /*   By: ktanaka <ktanaka@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/26 13:09:44 by ktanaka           #+#    #+#             */
-/*   Updated: 2018/02/18 20:13:37 by ktanaka          ###   ########.fr       */
+/*   Updated: 2018/02/19 08:50:18 by ktanaka          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ char	*ft_itoa(int n)
 	while (length--)
 	{
 		str[length] = n % 10 + '0';
-		n = n + 10;
+		n = n / 10;
 	}
 	if (negative)
 		str[0] = '-';
