@@ -6,7 +6,7 @@
 /*   By: ktanaka <ktanaka@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/20 17:45:45 by ktanaka           #+#    #+#             */
-/*   Updated: 2018/02/18 20:05:17 by ktanaka          ###   ########.fr       */
+/*   Updated: 2018/02/19 14:03:19 by ktanaka          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,25 +14,27 @@
 
 int	ft_atoi(const char *str)
 {
-	long long int	value;
-	long long int	sign;
-	int				i;
+	unsigned long long	value;
+	int					sign;
 
 	value = 0;
-	sign = 1;
-	i = 0;
-	while (ft_isspace(str[i]))
-		i++;
-	if (str[i] == '-')
-		sign = -1;
-	if (str[i] == '+' || str[i] == '-')
-		i++;
-	while (str[i] >= '0' && str[i] <= '9')
+	sign = 0;
+	while (ft_isspace(*str))
+		str++;
+	if (*str == '+' || *str == '-')
 	{
-		value = value * 10 + (long long int)(str[i] - 48);
-		i++;
+		if (*str == '-')
+			sign = 1;
+		str++;
 	}
-	if (sign == -1)
+	while (str[0] >= '0' && str[0] <= '9')
+	{
+		value = value * 10 + (str[0] - 48);
+		str++;
+	}
+	if (value > 9223372036854775807)
+		return ((sign == 1) ? 0 : -1);
+	if (sign == 1)
 		return (-value);
 	else
 		return (value);
